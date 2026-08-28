@@ -118,6 +118,15 @@ start index.html      # Windows
 `#064e3b`, ענבר `#b45309`. כותרות EB Garamond מול Assistant לגוף.
 מוטיבים של ♠ ♥ ♦ ♣ כפרטים דקורטיביים עדינים.
 
+## עדכונים ויומן יומי
+
+| איפה | מה |
+|---|---|
+| מקטע `#updates` ב-`index.html` | תקציר העדכונים שמוצג למבקרים באתר. הרשומה החדשה נכנסת בראש `#updates-feed`. |
+| `docs/daily/YYYY-MM-DD.md` | היומן המלא — רשומה לכל יום עבודה, עם הקומיטים ומה שנשאר פתוח. |
+
+המוסכמה המלאה מתועדת ב-[`docs/daily/README.md`](docs/daily/README.md).
+
 ## נוצר עם
 
 [Google Stitch](https://stitch.withgoogle.com) דרך שרת ה-MCP הרשמי
