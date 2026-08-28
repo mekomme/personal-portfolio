@@ -208,6 +208,11 @@
             right: 0;
             color: #064e3b;
         }
+        
+        .felt-texture {
+            background-color: #0e2e1e;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased selection:bg-tertiary selection:text-background flex flex-col min-h-screen relative overflow-x-hidden">
@@ -338,6 +343,215 @@
 <div class="absolute inset-0 bg-secondary/10 blur-xl"></div>
 <img class="w-full aspect-[3/4] object-cover rounded relative z-10 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A striking portrait of a sophisticated man in a dark, high-end late-night lounge setting. He wears a tailored charcoal suit. The lighting is cinematic, highlighting his focused expression against a dark background with subtle frosted emerald and burnished gold accents. The mood is authoritative and elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ECUdJ9NLy2fwoCjjZolO0OvUTYenHwoLUHDBJJUH69sEsptu1fIB9osxbzD0qXKoiAS9OJAD0JU8MAClnezRzwC0n721llA-5PSMgTL6UyKV1u-lwXni2vRBeIWr71kxmuc1Y9slVZN41l36g2tJF0jWrPARRgmMCcyQL7spijtzJko92uer6EdkrGGc5Hf1hGXmFX3Qb7nEohhRCqIaBE5u_8CySaz0glIHi4oykTlKckvGmS5Cy4Hk6mZUg3J8aCb4X-4nXOTv"/>
 </div>
+</div>
+</div>
+</section>
+<!-- Games Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="games">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">המשחקים שלי</h2>
+<div class="suit-divider text-tertiary mb-12">♣</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-right">
+<!-- Card 1 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="playing_cards">playing_cards</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: מתקדם</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">פוקר טקסס הולדם</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">משחק של מידע חסר, קריאת יריבים וניהול סיכונים. התמחות בטורנירים ושולחנות במזומן.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="style">style</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: מתקדם</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">בלאק ג'ק</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">הקלאסיקה של הקזינו. יישום אסטרטגיה בסיסית ומתקדמת למיקסום סיכויים.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="casino">casino</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: חובב</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">רולטה</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">התרגשות הטהורה של הגלגל. פיזור הימורים אסטרטגי וידיעת הסיכויים.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="sports_soccer">sports_soccer</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: מתקדם</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">הימורי ספורט</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">ניתוח סטטיסטיקות, קריאת מומנטום ומציאת ערך (Value) ביחסים.</p>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="diversity_3">diversity_3</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: תחרותי</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">ברידג'</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">משחק השותפים האולטימטיבי. בניית אמון, תקשורת והכרזות מדויקות.</p>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
+<div class="flex justify-between items-start flex-row-reverse">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="slot_machine">slot_machine</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: לכיף בלבד</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">מכונות מזל</h3>
+<p class="text-on-surface-variant text-sm font-body-md line-clamp-2">אדרנלין טהור. ניהול תקציב מוקפד והנאה מהגרפיקה והסאונד.</p>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="timeline">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">ציר הזמן</h2>
+<div class="suit-divider text-tertiary mb-12">♥</div>
+<div class="relative border-r-2 border-tertiary/30 pr-8 md:pr-12 text-right mr-4 md:mr-8 space-y-12">
+<div class="relative">
+<div class="absolute -right-10 md:-right-14 w-4 h-4 bg-background border-2 border-tertiary rounded-full top-1"></div>
+<h3 class="font-display-lg-mobile text-2xl text-tertiary mb-2">2009</h3>
+<p class="text-on-surface font-headline-md text-xl">המשחק הראשון</p>
+</div>
+<div class="relative">
+<div class="absolute -right-10 md:-right-14 w-4 h-4 bg-background border-2 border-tertiary rounded-full top-1"></div>
+<h3 class="font-display-lg-mobile text-2xl text-tertiary mb-2">2013</h3>
+<p class="text-on-surface font-headline-md text-xl">הטורניר הראשון</p>
+</div>
+<div class="relative">
+<div class="absolute -right-10 md:-right-14 w-4 h-4 bg-background border-2 border-tertiary rounded-full top-1"></div>
+<h3 class="font-display-lg-mobile text-2xl text-tertiary mb-2">2016</h3>
+<p class="text-on-surface font-headline-md text-xl">השולחן הגדול הראשון</p>
+</div>
+<div class="relative">
+<div class="absolute -right-10 md:-right-14 w-4 h-4 bg-background border-2 border-tertiary rounded-full top-1"></div>
+<h3 class="font-display-lg-mobile text-2xl text-tertiary mb-2">2019</h3>
+<p class="text-on-surface font-headline-md text-xl">לאס וגאס</p>
+</div>
+<div class="relative">
+<div class="absolute -right-10 md:-right-14 w-4 h-4 bg-tertiary rounded-full top-1 shadow-[0_0_10px_rgba(180,83,9,0.5)]"></div>
+<h3 class="font-display-lg-mobile text-2xl text-tertiary mb-2">2026</h3>
+<p class="text-on-surface font-headline-md text-xl">היום</p>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="gallery">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">רגעים</h2>
+<div class="suit-divider text-tertiary mb-12">♦</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">שולחן הגמר</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-75"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">בלוף מושלם</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-150"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">הז'יטונים</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-300"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">הקלפים חולקו</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-100"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">וגאס בלילה</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-200"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">פוקוס מלא</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-500"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">ניצחון</span>
+</div>
+</div>
+<div class="relative group aspect-square rounded overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse delay-700"></div>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-on-surface font-label-caps">חברים לשולחן</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="w-full py-20 felt-texture border-y gold-hairline" id="philosophy">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" data-icon="format_quote">format_quote</span>
+<p class="font-headline-md text-2xl md:text-4xl text-on-surface max-w-4xl mx-auto leading-relaxed mb-8">
+        "המשחק אינו מלחמה נגד היריב, אלא מאבק מתמיד עם עצמך. המנצח האמיתי הוא זה שמסוגל להתעלם מרעשי הרקע, לחשב את הסיכויים בבהירות, ולקבל החלטות קרות גם כשהלב דופק במהירות. המזל מחלק את הקלפים, אבל המשמעת קובעת מי יאסוף את הז'יטונים בסוף הערב."
+    </p>
+<div class="text-tertiary font-label-caps text-lg">— ישראל ישראלי</div>
+</div>
+</section>
+<!-- Responsible Gaming Note -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto flex justify-center">
+<div class="glass-panel border-tertiary/20 border rounded p-4 flex items-center gap-4 text-on-surface-variant text-sm max-w-md">
+<span class="font-display-lg text-tertiary text-2xl font-bold">18+</span>
+<p class="text-right">הימורים יכולים להיות ממכרים. שחקו באחריות, לכיף בלבד, ולעולם לא עם כסף שאתם לא יכולים להרשות לעצמכם להפסיד. דעו מתי לעצור.</p>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="contact">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">צרו קשר</h2>
+<div class="suit-divider text-tertiary mb-12">♠</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="text-right flex flex-col gap-6 order-2 md:order-1">
+<h3 class="font-headline-md text-2xl text-tertiary mb-4">לשחק ביחד</h3>
+<p class="text-on-surface-variant font-body-md mb-6">מעוניינים במשחק ידידותי, ייעוץ אסטרטגי או פשוט לשוחח על תורת המשחקים? אשמח לשמוע מכם.</p>
+<div class="flex items-center gap-4 flex-row-reverse text-on-surface">
+<span class="material-symbols-outlined text-tertiary" data-icon="mail">mail</span>
+<a class="hover:text-tertiary transition-colors" href="mailto:israel@example.com">israel@example.com</a>
+</div>
+<div class="flex items-center gap-4 flex-row-reverse text-on-surface">
+<span class="material-symbols-outlined text-tertiary" data-icon="phone">phone</span>
+<a class="hover:text-tertiary transition-colors" dir="ltr" href="tel:+972501234567">050-123-4567</a>
+</div>
+<div class="flex items-center gap-4 flex-row-reverse text-on-surface">
+<span class="material-symbols-outlined text-tertiary" data-icon="location_on">location_on</span>
+<span>תל אביב, ישראל</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded border border-tertiary/30 order-1 md:order-2">
+<form class="flex flex-col gap-4" dir="rtl">
+<div>
+<label class="block text-on-surface font-label-caps mb-2 text-right" for="name">שם</label>
+<input class="w-full bg-surface-container-lowest border border-tertiary/20 rounded px-4 py-2 text-on-surface focus:outline-none focus:border-tertiary transition-colors" id="name" placeholder="השם שלכם" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface font-label-caps mb-2 text-right" for="email">אימייל</label>
+<input class="w-full bg-surface-container-lowest border border-tertiary/20 rounded px-4 py-2 text-on-surface focus:outline-none focus:border-tertiary transition-colors" dir="ltr" id="email" placeholder="your@email.com" type="email"/>
+</div>
+<div>
+<label class="block text-on-surface font-label-caps mb-2 text-right" for="subject">נושא</label>
+<input class="w-full bg-surface-container-lowest border border-tertiary/20 rounded px-4 py-2 text-on-surface focus:outline-none focus:border-tertiary transition-colors" id="subject" placeholder="נושא הפנייה" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface font-label-caps mb-2 text-right" for="message">הודעה</label>
+<textarea class="w-full bg-surface-container-lowest border border-tertiary/20 rounded px-4 py-2 text-on-surface focus:outline-none focus:border-tertiary transition-colors" id="message" placeholder="ספרו לי קצת..." rows="4"></textarea>
+</div>
+<button class="w-full bg-tertiary text-[#fdfbf7] font-label-caps py-3 rounded mt-2 hover:bg-tertiary/90 transition-colors shadow-lg" type="submit">שליחה</button>
+</form>
 </div>
 </div>
 </section>
