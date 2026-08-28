@@ -218,6 +218,48 @@
             background-color: #064e3b;
             background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(180, 83, 9, 0.2) 10px, rgba(180, 83, 9, 0.2) 20px);
         }
+
+        /* --- כרטיסי "המשחקים שלי": שמירת התוכן בתוך גבולות הכרטיס --- */
+
+        /* פריט גריד/פלקס לא מצטמצם מתחת לרוחב התוכן שלו כברירת מחדל
+           (min-width: auto). זו הסיבה שמילה ארוכה דוחפת החוצה. */
+        #games .grid > *,
+        #games .glass-panel > * {
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        #games .glass-panel {
+            overflow: hidden;
+        }
+
+        /* שורת האייקון והתגית: מותר לה לרדת שורה במקום לגלוש */
+        #games .glass-panel > .flex {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* אם ליגטורת Material Symbols לא נפתרת, הטקסט הגולמי לא יפיל את הפריסה */
+        #games .glass-panel .material-symbols-outlined {
+            flex: 0 0 auto;
+            line-height: 1;
+            overflow: hidden;
+            font-size: clamp(1.5rem, 1.2rem + 0.9vw, 1.875rem);
+        }
+
+        /* תגית הרמה: מצטמצמת בחן, בלי לשבור מילים באמצע */
+        #games .glass-panel .font-label-caps {
+            flex: 0 1 auto;
+            overflow-wrap: break-word;
+        }
+
+        /* כותרת ותיאור: שוברים מילים ארוכות במקום לגלוש */
+        #games .glass-panel h3,
+        #games .glass-panel p {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            hyphens: auto;
+        }
     </style>
 <link href="blackjack.css" rel="stylesheet"/>
 
@@ -405,7 +447,7 @@
 <!-- Card 6 -->
 <div class="glass-panel p-6 rounded border border-tertiary/20 hover:border-tertiary transition-colors flex flex-col gap-4">
 <div class="flex justify-between items-start flex-row-reverse">
-<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="slot_machine">slot_machine</span>
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="poker_chip">poker_chip</span>
 <span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-label-caps">רמה: לכיף בלבד</span>
 </div>
 <h3 class="font-headline-md text-xl text-on-surface">מכונות מזל</h3>
