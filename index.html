@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ישראל ישראלי - בין מתמטיקה למזל</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&amp;family=EB+Garamond:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#313124",
+                      "tertiary-container": "#240b00",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-variant": "#353628",
+                      "surface-bright": "#3a3a2c",
+                      "secondary-fixed": "#b0f0d6",
+                      "outline-variant": "#444748",
+                      "on-primary-container": "#7e7d7d",
+                      "tertiary-fixed": "#ffdbca",
+                      "on-tertiary": "#532200",
+                      "primary-container": "#121212",
+                      "on-tertiary-fixed": "#331200",
+                      "secondary-container": "#0b513d",
+                      "on-secondary-fixed-variant": "#0b513d",
+                      "on-surface": "#e5e3d0",
+                      "primary-fixed": "#e5e2e1",
+                      "on-secondary-fixed": "#002117",
+                      "surface-container-low": "#1c1c10",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#763300",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#c8c6c5",
+                      "on-secondary": "#003829",
+                      "inverse-primary": "#5f5e5e",
+                      "background": "#121212", /* Adjusted to Deep Charcoal as per guidance */
+                      "surface-container-lowest": "#0e0f05",
+                      "primary": "#c8c6c5",
+                      "surface-dim": "#131409",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "outline": "#8e9192",
+                      "on-error": "#690005",
+                      "surface-container": "#202014",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-secondary-container": "#83c2a9",
+                      "on-tertiary-container": "#c6611a",
+                      "surface-container-highest": "#353628",
+                      "tertiary": "#b45309", /* Adjusted to Burnished Gold as per guidance */
+                      "on-primary": "#313030",
+                      "inverse-surface": "#e5e3d0",
+                      "tertiary-fixed-dim": "#ffb68e",
+                      "on-surface-variant": "#c4c7c7",
+                      "secondary-fixed-dim": "#95d3ba",
+                      "surface": "#131409",
+                      "secondary": "#064e3b", /* Adjusted to Emerald as per guidance */
+                      "surface-container-high": "#2a2b1e",
+                      "error": "#ffb4ab",
+                      "on-background": "#e5e3d0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "section-gap": "80px",
+                      "container-max": "1120px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Assistant"
+                      ],
+                      "display-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "Assistant"
+                      ],
+                      "body-md": [
+                              "Assistant"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.8",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background-color: rgba(6, 78, 59, 0.15); /* Emerald with opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid #b45309; /* Burnished Gold hairline */
+        }
+        
+        .gold-hairline {
+            border-color: #b45309;
+            border-width: 1px;
+        }
+
+        .gold-hairline-bottom {
+            border-bottom: 1px solid #b45309;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353628; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b45309; 
+        }
+        
+        /* Divider suit motif */
+        .suit-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #b45309;
+        }
+        .suit-divider::before,
+        .suit-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #b45309;
+            opacity: 0.3;
+        }
+        .suit-divider::before { margin-left: .5em; }
+        .suit-divider::after { margin-right: .5em; }
+        
+        /* Custom suit list marker */
+        .suit-list li {
+            position: relative;
+            padding-right: 1.5rem;
+        }
+        .suit-list li::before {
+            content: '♠';
+            position: absolute;
+            right: 0;
+            color: #064e3b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-tertiary selection:text-background flex flex-col min-h-screen relative overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-xl dark:bg-background/80 fixed top-0 w-full z-50 shadow-sm border-b border-tertiary/20">
+<div class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md text-tertiary dark:text-tertiary shrink-0">
+<a class="hover:text-tertiary/80 transition-all" href="#">המועדון הפרטי</a>
+</div>
+<!-- Links (Desktop) -->
+<div class="hidden md:flex flex-row-reverse gap-unit">
+<a class="text-tertiary border-b border-tertiary font-bold pb-1 font-label-caps text-label-caps px-4 py-2 hover:text-tertiary/80 transition-all scale-95 duration-150 ease-in-out" href="#home">בית</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-label-caps px-4 py-2" href="#games">משחקים</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-label-caps px-4 py-2" href="#about">אודות</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-label-caps px-4 py-2" href="#gallery">גלריה</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-label-caps px-4 py-2" href="#contact">צרו קשר</a>
+</div>
+<!-- Action / Mobile Menu Toggle -->
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex items-center justify-center bg-tertiary text-[#fdfbf7] font-label-caps text-label-caps px-6 py-3 rounded hover:bg-tertiary/90 transition-colors" href="#contact">
+                    הצטרפות
+                </a>
+<button aria-label="Menu" class="md:hidden text-tertiary hover:text-tertiary/80 transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-section-gap flex flex-col gap-section-gap">
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto relative min-h-[716px] flex items-center mt-8" id="home">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 30% 50%, #064e3b 0%, transparent 50%);"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+<div class="text-right">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-4">
+                        ישראל ישראלי
+                    </h1>
+<div class="suit-divider text-tertiary mb-6">♦</div>
+<p class="font-headline-md text-headline-md text-tertiary mb-6">בין מתמטיקה למזל</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg ml-auto">
+                        האמנות של המשחק אינה טמונה בקלפים שקיבלת, אלא בדרך בה אתה משחק אותם. לאחר למעלה מעשור סביב שולחנות הלבד הירוק, למדתי שההבדל בין מהמר למקצוען הוא השליטה העצמית, קריאת ההסתברויות, והיכולת להישאר קר רוח כשהכל מונח על הכף.
+                    </p>
+<div class="flex flex-row-reverse gap-4 justify-start">
+<a class="inline-flex items-center justify-center bg-tertiary text-[#fdfbf7] font-label-caps text-label-caps px-8 py-4 rounded hover:bg-tertiary/90 transition-colors shadow-lg" href="#contact">
+                            צור קשר
+                        </a>
+<a class="inline-flex items-center justify-center border border-tertiary text-tertiary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-tertiary/10 transition-colors" href="#about">
+                            קצת עליי
+                        </a>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="relative h-96 hidden md:block">
+<div class="absolute inset-0 flex items-center justify-center perspective-1000">
+<div class="w-48 h-64 glass-panel rounded border border-tertiary/50 absolute transform rotate-[-15deg] -translate-x-12 flex flex-col items-center justify-between py-4 opacity-70">
+<span class="material-symbols-outlined text-tertiary text-2xl self-end px-4" data-icon="playing_cards">playing_cards</span>
+<span class="font-display-lg text-tertiary text-6xl">A</span>
+</div>
+<div class="w-48 h-64 glass-panel rounded border border-tertiary absolute z-10 flex flex-col items-center justify-between py-4 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+<span class="material-symbols-outlined text-secondary text-2xl self-end px-4" data-icon="playing_cards">playing_cards</span>
+<span class="font-display-lg text-on-surface text-6xl">K</span>
+</div>
+<div class="w-48 h-64 glass-panel rounded border border-tertiary/50 absolute transform rotate-[15deg] translate-x-12 flex flex-col items-center justify-between py-4 opacity-70">
+<span class="material-symbols-outlined text-tertiary text-2xl self-end px-4" data-icon="playing_cards">playing_cards</span>
+<span class="font-display-lg text-tertiary text-6xl">Q</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Strip -->
+<section class="w-full bg-surface-container-lowest border-y gold-hairline py-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-x-reverse divide-tertiary/20 text-center">
+<div>
+<div class="font-display-lg-mobile text-tertiary mb-2">15+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">שנות משחק</div>
+</div>
+<div>
+<div class="font-display-lg-mobile text-tertiary mb-2">120</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">טורנירים</div>
+</div>
+<div>
+<div class="font-display-lg-mobile text-tertiary mb-2">500</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">שולחנות</div>
+</div>
+<div>
+<div class="font-display-lg-mobile text-tertiary mb-2">פוקר</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">משחק אהוב</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="about">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">אודות</h2>
+<div class="suit-divider text-tertiary mb-12">♠</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="order-2 md:order-1 flex flex-col gap-6 text-right text-on-surface-variant font-body-md text-body-md">
+<p>
+                        המסע שלי התחיל הרבה לפני שהתיישבתי לראשונה בשולחן מקצועי. התשוקה למספרים, להסתברויות ולפסיכולוגיה אנושית הובילה אותי באופן טבעי לעולם שבו שלושת האלמנטים הללו נפגשים - עולם משחקי האסטרטגיה וההימורים.
+                    </p>
+<p>
+                        אינני מאמין במזל עיוור. אני מאמין בניהול סיכונים מושכל, בהכנה קפדנית, וביכולת לקרוא את היריב. כל שולחן הוא חידה מתמטית ופסיכולוגית שיש לפתור, וכל יד היא הזדמנות ליישם אסטרטגיה שנבחנה בקפידה. עבורי, השולחן הוא לא רק מקום של בילוי, אלא זירה של אתגר אינטלקטואלי ברמה הגבוהה ביותר.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+<div class="glass-panel p-4 rounded text-center">
+<span class="material-symbols-outlined text-tertiary mb-2 block" data-icon="balance">balance</span>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-1">משמעת</h3>
+<p class="text-sm text-on-surface-variant opacity-80">הבסיס לכל החלטה</p>
+</div>
+<div class="glass-panel p-4 rounded text-center">
+<span class="material-symbols-outlined text-tertiary mb-2 block" data-icon="percent">percent</span>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-1">הסתברות</h3>
+<p class="text-sm text-on-surface-variant opacity-80">המתמטיקה מנצחת</p>
+</div>
+<div class="glass-panel p-4 rounded text-center">
+<span class="material-symbols-outlined text-tertiary mb-2 block" data-icon="ac_unit">ac_unit</span>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-1">קור רוח</h3>
+<p class="text-sm text-on-surface-variant opacity-80">שליטה ברגעים קריטיים</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="relative p-2 border gold-hairline rounded max-w-sm ml-auto">
+<div class="absolute inset-0 bg-secondary/10 blur-xl"></div>
+<img class="w-full aspect-[3/4] object-cover rounded relative z-10 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A striking portrait of a sophisticated man in a dark, high-end late-night lounge setting. He wears a tailored charcoal suit. The lighting is cinematic, highlighting his focused expression against a dark background with subtle frosted emerald and burnished gold accents. The mood is authoritative and elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ECUdJ9NLy2fwoCjjZolO0OvUTYenHwoLUHDBJJUH69sEsptu1fIB9osxbzD0qXKoiAS9OJAD0JU8MAClnezRzwC0n721llA-5PSMgTL6UyKV1u-lwXni2vRBeIWr71kxmuc1Y9slVZN41l36g2tJF0jWrPARRgmMCcyQL7spijtzJko92uer6EdkrGGc5Hf1hGXmFX3Qb7nEohhRCqIaBE5u_8CySaz0glIHi4oykTlKckvGmS5Cy4Hk6mZUg3J8aCb4X-4nXOTv"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-tertiary/10">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-unit">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md text-tertiary mb-6 md:mb-0">
+                המועדון הפרטי
+            </div>
+<!-- Copyright -->
+<div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right">
+                כל הזכויות שמורות © 2024 | תל אביב, ישראל
+            </div>
+<!-- Links -->
+<div class="flex gap-4 flex-wrap justify-center font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">מדיניות פרטיות</a>
+<span class="text-tertiary/30">•</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">תנאי שימוש</a>
+<span class="text-tertiary/30">•</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100 transition-opacity font-bold" href="#">משחק אחראי</a>
+</div>
+</div>
+</footer>
+</body></html>
