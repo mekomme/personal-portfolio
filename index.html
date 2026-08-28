@@ -213,8 +213,14 @@
             background-color: #0e2e1e;
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
         }
+        
+        .card-pattern {
+            background-color: #064e3b;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(180, 83, 9, 0.2) 10px, rgba(180, 83, 9, 0.2) 20px);
+        }
     </style>
-</head>
+<link href="blackjack.css" rel="stylesheet"/>
+
 <body class="bg-background text-on-surface font-body-md antialiased selection:bg-tertiary selection:text-background flex flex-col min-h-screen relative overflow-x-hidden">
 <!-- TopNavBar -->
 <nav class="bg-background/80 backdrop-blur-xl dark:bg-background/80 fixed top-0 w-full z-50 shadow-sm border-b border-tertiary/20">
@@ -407,6 +413,110 @@
 </div>
 </div>
 </section>
+<!-- Blackjack Section -->
+<section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="blackjack">
+<div class="rounded-xl border border-[#c5a059] bg-[#133321] felt-texture p-8 md:p-12 shadow-2xl relative overflow-hidden">
+<!-- Header -->
+<div class="text-center mb-10">
+<h2 class="font-headline-md text-headline-md text-[#c5a059] mb-2">שולחן הבלאק ג'ק</h2>
+<p class="text-[#c5a059]/80 font-label-caps tracking-wider">צ'יפים וירטואליים בלבד — בלי כסף אמיתי</p>
+</div>
+<!-- Dealer Area -->
+<div class="flex flex-col items-center gap-6 mb-8">
+<div class="flex items-center gap-4">
+<span class="text-[#c5a059] font-label-caps px-4 py-1 border border-[#c5a059]/30 rounded-full">דילר</span>
+<span class="bg-black/40 text-[#c5a059] font-mono px-3 py-1 rounded" id="dealerScore">?</span>
+</div>
+<div class="flex justify-center gap-4 min-h-[120px]" id="dealerCards">
+<!-- Card 1 (Down) -->
+<div class="w-20 h-28 rounded-lg border border-[#c5a059] card-pattern shadow-lg"></div>
+<!-- Card 2 (Up) -->
+<div class="w-20 h-28 bg-[#fdfbf7] rounded-lg border border-gray-300 shadow-lg flex flex-col justify-between p-2">
+<span class="text-red-800 font-bold leading-none">10</span>
+<span class="text-red-800 self-center text-2xl">♦</span>
+<span class="text-red-800 font-bold leading-none self-end transform rotate-180">10</span>
+</div>
+<!-- Card 3 (Up) -->
+<div class="w-20 h-28 bg-[#fdfbf7] rounded-lg border border-gray-300 shadow-lg flex flex-col justify-between p-2">
+<span class="text-gray-900 font-bold leading-none">7</span>
+<span class="text-gray-900 self-center text-2xl">♠</span>
+<span class="text-gray-900 font-bold leading-none self-end transform rotate-180">7</span>
+</div>
+</div>
+</div>
+<!-- Status Divider -->
+<div class="relative py-4 my-4 flex items-center justify-center">
+<div class="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-[#c5a059]/50 to-transparent"></div>
+<span class="relative bg-[#133321] px-6 text-[#c5a059] font-headline-md italic text-xl" id="gameMessage">הנח הימור כדי להתחיל</span>
+</div>
+<!-- Player Area -->
+<div class="flex flex-col items-center gap-6 mb-12">
+<div class="flex justify-center gap-4 min-h-[120px]" id="playerCards">
+<!-- Card 1 -->
+<div class="w-20 h-28 bg-[#fdfbf7] rounded-lg border border-gray-300 shadow-lg flex flex-col justify-between p-2">
+<span class="text-red-800 font-bold leading-none">J</span>
+<span class="text-red-800 self-center text-2xl">♥</span>
+<span class="text-red-800 font-bold leading-none self-end transform rotate-180">J</span>
+</div>
+<!-- Card 2 -->
+<div class="w-20 h-28 bg-[#fdfbf7] rounded-lg border border-gray-300 shadow-lg flex flex-col justify-between p-2">
+<span class="text-gray-900 font-bold leading-none">8</span>
+<span class="text-gray-900 self-center text-2xl">♣</span>
+<span class="text-gray-900 font-bold leading-none self-end transform rotate-180">8</span>
+</div>
+<!-- Card 3 -->
+<div class="w-20 h-28 bg-[#fdfbf7] rounded-lg border border-gray-300 shadow-lg flex flex-col justify-between p-2">
+<span class="text-gray-900 font-bold leading-none">A</span>
+<span class="text-gray-900 self-center text-2xl">♠</span>
+<span class="text-gray-900 font-bold leading-none self-end transform rotate-180">A</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#c5a059] font-label-caps px-4 py-1 border border-[#c5a059]/30 rounded-full">שחקן</span>
+<span class="bg-black/40 text-[#c5a059] font-mono px-3 py-1 rounded" id="playerScore">19</span>
+</div>
+</div>
+<!-- Controls Container -->
+<div class="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-[#c5a059]/20">
+<!-- Row A: Chips & Betting -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8 border-b border-[#c5a059]/20 pb-8">
+<div class="flex items-center gap-4">
+<span class="text-[#c5a059] font-label-caps">הימור:</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-red-600 text-white font-bold text-sm border-2 border-white/20 ring-2 ring-dashed ring-red-400/50 hover:scale-110 transition-transform shadow-lg flex items-center justify-center" data-chip="5" type="button" aria-label="הימור 5">5</button>
+<button class="w-10 h-10 rounded-full bg-green-600 text-white font-bold text-sm border-2 border-white/20 ring-2 ring-dashed ring-green-400/50 hover:scale-110 transition-transform shadow-lg flex items-center justify-center" data-chip="25" type="button" aria-label="הימור 25">25</button>
+<button class="w-10 h-10 rounded-full bg-black text-white font-bold text-sm border-2 border-white/20 ring-2 ring-dashed ring-gray-400/50 hover:scale-110 transition-transform shadow-lg flex items-center justify-center" data-chip="100" type="button" aria-label="הימור 100">100</button>
+<button class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-sm border-2 border-white/20 ring-2 ring-dashed ring-purple-400/50 hover:scale-110 transition-transform shadow-lg flex items-center justify-center" data-chip="500" type="button" aria-label="הימור 500">500</button>
+</div>
+<button class="text-[#c5a059] text-sm hover:text-white transition-colors underline mr-2" id="clearBetBtn" type="button">נקה</button>
+</div>
+<div class="flex gap-6">
+<div class="text-center">
+<div class="text-xs text-[#c5a059]/70 font-label-caps mb-1">הימור נוכחי</div>
+<div class="bg-black/50 text-white font-mono px-4 py-2 rounded border border-[#c5a059]/30 min-w-[80px]" id="currentBet">0</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-[#c5a059]/70 font-label-caps mb-1">יתרה</div>
+<div class="bg-black/50 text-[#c5a059] font-mono px-4 py-2 rounded border border-[#c5a059]/30 min-w-[80px]" id="balance">1,000</div>
+</div>
+</div>
+</div>
+<!-- Row B: Actions -->
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-[#c5a059] text-[#133321] font-bold px-8 py-3 rounded hover:bg-[#d6b36c] transition-colors shadow-lg" id="dealBtn" type="button">חלק קלפים</button>
+<button class="bg-white/10 text-white border border-white/20 px-6 py-3 rounded hover:bg-white/20 transition-colors" disabled="" id="hitBtn" type="button">קח קלף</button>
+<button class="bg-white/10 text-white border border-white/20 px-6 py-3 rounded hover:bg-white/20 transition-colors" disabled="" id="standBtn" type="button">עצור</button>
+<button class="bg-white/10 text-white border border-white/20 px-6 py-3 rounded hover:bg-white/20 transition-colors" disabled="" id="doubleBtn" type="button">הכפל</button>
+<button class="text-[#c5a059] hover:text-white px-4 py-3 rounded transition-colors mr-auto" id="resetBtn" type="button">משחק חדש</button>
+</div>
+</div>
+<!-- Footnote -->
+<div class="mt-8 flex justify-center items-center gap-2 text-[#c5a059]/50 text-xs">
+<span class="font-bold border border-[#c5a059]/50 rounded-full px-1.5 py-0.5">18+</span>
+<span>משחק להנאה בלבד. אין רכישה, אין תשלום ואין פרסים.</span>
+</div>
+</div>
+</section>
 <!-- Timeline Section -->
 <section class="w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="timeline">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-8 text-right">ציר הזמן</h2>
@@ -577,4 +687,5 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script defer src="blackjack.js"></script>
+</html>

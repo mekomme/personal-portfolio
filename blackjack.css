@@ -1,0 +1,178 @@
+/* ==========================================================================
+   שולחן הבלאק ג'ק — סגנון הקלפים והצ'יפים
+   נטען אחרי Tailwind כדי שהקלפים שנוצרים דינמית ייראו נכון.
+   ========================================================================== */
+
+:root {
+  --bj-felt: #0b3b2e;
+  --bj-felt-deep: #072a20;
+  --bj-gold: #b45309;
+  --bj-gold-lt: #e0a458;
+  --bj-card-face: #f4f1e4;
+  --bj-red: #a33131;
+  --bj-black: #1b1b18;
+}
+
+/* ---------- שורות הקלפים ---------- */
+.bj-hand {
+  display: flex;
+  flex-direction: row-reverse; /* RTL: הקלף הראשון מימין */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 132px;
+  flex-wrap: wrap;
+}
+
+/* ---------- קלף ---------- */
+.bj-card {
+  position: relative;
+  width: 92px;
+  height: 128px;
+  border-radius: 8px;
+  background: var(--bj-card-face);
+  box-shadow: 0 10px 22px -10px rgba(0, 0, 0, .75), inset 0 0 0 1px rgba(0, 0, 0, .18);
+  flex: 0 0 auto;
+  direction: ltr;
+  animation: bj-deal .32s cubic-bezier(.2, .8, .3, 1) both;
+}
+
+@keyframes bj-deal {
+  from { opacity: 0; transform: translateY(-26px) rotate(-6deg) scale(.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+.bj-card .bj-corner {
+  position: absolute;
+  font-family: "EB Garamond", Georgia, serif;
+  font-weight: 600;
+  line-height: .95;
+  text-align: center;
+  font-size: 17px;
+}
+.bj-card .bj-corner .bj-s { display: block; font-size: 14px; }
+.bj-card .bj-tl { top: 7px; left: 8px; }
+.bj-card .bj-br { bottom: 7px; right: 8px; transform: rotate(180deg); }
+
+.bj-card .bj-pip {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  line-height: 1;
+  opacity: .92;
+}
+
+.bj-card.bj-red   { color: var(--bj-red); }
+.bj-card.bj-black { color: var(--bj-black); }
+
+/* ---------- גב הקלף ---------- */
+.bj-card.bj-back {
+  background:
+    repeating-linear-gradient(45deg,  rgba(224,164,88,.20) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(-45deg, rgba(224,164,88,.20) 0 1px, transparent 1px 9px),
+    linear-gradient(160deg, #0e4635, var(--bj-felt-deep));
+  box-shadow: 0 10px 22px -10px rgba(0,0,0,.75), inset 0 0 0 1px rgba(224,164,88,.38);
+}
+.bj-card.bj-back::after {
+  content: "♠";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: rgba(224, 164, 88, .34);
+}
+
+/* ---------- תוצאה ---------- */
+.bj-score {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 20px;
+  min-width: 3ch;
+  display: inline-block;
+  text-align: center;
+}
+
+/* ---------- צ'יפים ---------- */
+.bj-chip {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Assistant", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  border: 3px dashed rgba(255, 255, 255, .55);
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .9), inset 0 0 0 4px rgba(0, 0, 0, .12);
+  transition: transform .16s ease, filter .16s ease;
+  flex: 0 0 auto;
+}
+.bj-chip:hover:not(:disabled)  { transform: translateY(-4px); filter: brightness(1.1); }
+.bj-chip:active:not(:disabled) { transform: translateY(-1px); }
+.bj-chip:disabled { opacity: .35; cursor: not-allowed; }
+
+.bj-chip-5   { background: #e8e5da; color: #2a2a24; }
+.bj-chip-25  { background: #1f7a52; color: #f2f7f4; }
+.bj-chip-100 { background: #24486e; color: #eef3f8; }
+.bj-chip-500 { background: #b45309; color: #fff6e8; }
+
+/* ---------- כפתורי פעולה ---------- */
+.bj-btn {
+  font-family: "Assistant", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .02em;
+  padding: 12px 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, opacity .18s ease, transform .16s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.bj-btn:hover:not(:disabled) { transform: translateY(-2px); }
+.bj-btn:disabled { opacity: .32; cursor: not-allowed; transform: none; }
+
+.bj-btn-primary { background: var(--bj-gold); color: #fff6e8; }
+.bj-btn-primary:hover:not(:disabled) { background: var(--bj-gold-lt); color: #241400; }
+
+.bj-btn-solid { background: rgba(229, 227, 208, .12); color: #e5e3d0; border-color: rgba(229, 227, 208, .25); }
+.bj-btn-solid:hover:not(:disabled) { background: rgba(229, 227, 208, .2); }
+
+.bj-btn-ghost { background: transparent; color: #c4c7c7; border-color: rgba(196, 199, 199, .38); }
+.bj-btn-ghost:hover:not(:disabled) { background: rgba(196, 199, 199, .12); color: #e5e3d0; }
+
+/* ---------- הודעת מצב ---------- */
+#gameMessage {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  min-height: 1.6em;
+  transition: color .2s ease;
+}
+#gameMessage.bj-win  { color: #95d3ba; }
+#gameMessage.bj-lose { color: #e79c96; }
+#gameMessage.bj-push { color: #e0a458; }
+
+/* ---------- הבהוב יתרה ---------- */
+.bj-flash { animation: bj-flash .55s ease; }
+@keyframes bj-flash {
+  0%, 100% { color: inherit; }
+  40%      { color: var(--bj-gold-lt); }
+}
+
+@media (max-width: 640px) {
+  .bj-card { width: 68px; height: 96px; }
+  .bj-card .bj-pip { font-size: 30px; }
+  .bj-hand { min-height: 100px; gap: 7px; }
+  .bj-chip { width: 52px; height: 52px; font-size: 13px; }
+  .bj-btn { padding: 11px 18px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bj-card { animation: none; }
+  .bj-btn, .bj-chip { transition: none; }
+}
